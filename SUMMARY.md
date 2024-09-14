@@ -30,7 +30,7 @@
     * [SNMP(161 UDP)](enumeration-and-attack-planning/footprinting/host-based-enumeration/snmp-161-udp.md)
     * [MySQL(3306)](enumeration-and-attack-planning/footprinting/host-based-enumeration/mysql-3306.md)
     * [MSSQL(1433)](enumeration-and-attack-planning/footprinting/host-based-enumeration/mssql-1433.md)
-    * [Oracle TNS](enumeration-and-attack-planning/footprinting/host-based-enumeration/oracle-tns.md)
+    * [(1521)Oracle TNS](enumeration-and-attack-planning/footprinting/host-based-enumeration/1521-oracle-tns.md)
     * [IPMI](enumeration-and-attack-planning/footprinting/host-based-enumeration/ipmi.md)
 * [Skill Assessments](enumeration-and-attack-planning/skill-assessments.md)
 

@@ -6,7 +6,7 @@ description: >-
 
 # Nmap
 
-## 1. Input Options:
+## Input Options:
 
 ```bash
 $nmap 10.10.10.10 : Scan a single host
@@ -16,7 +16,7 @@ $nmap 10.10.10.10 : Scan a single host
       domain.tld : scan a domain.
 ```
 
-## 2. Scanning Techniques:
+## Scanning Techniques:
 
 | Switch            | Description                                                                                                      |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------- |
@@ -29,7 +29,7 @@ $nmap 10.10.10.10 : Scan a single host
 These flags (SYN, ACK..etc) are part of the TCP header, which is included in every TCP segment exchanged between devices during the communication process. By examining the flags in the TCP header, devices can determine the purpose of incoming packets and take appropriate actions, such as establishing a connection, acknowledging data receipt, or closing the connection.
 {% endhint %}
 
-## 3. Output Options:
+## Output Options:
 
 | Switch                      |                                                                                                                                                                                                          |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -43,7 +43,7 @@ These flags (SYN, ACK..etc) are part of the TCP header, which is included in eve
 | `$nmap <IP> -packet-trace`  | Show all packets sent and received.                                                                                                                                                                      |
 | `$nmap <IP> -v # OR -vv`    | Increase the verbosity level.                                                                                                                                                                            |
 
-## 4. Performance:
+## Performance:
 
 {% hint style="danger" %}
 <mark style="color:red;">Optimized scans do accelerate the scanning process BUT can overlook important information.</mark>

@@ -6,7 +6,7 @@ description: >-
 
 # Shells & SSH
 
-## I. SSH:
+## SSH:
 
 ### Why SSH ?
 
@@ -24,7 +24,7 @@ There  are two types of keys used in an SSH connection:&#x20;
 The server checks if our **public key** is listed in the <mark style="color:green;">authorized\_keys</mark> file and if the corresponding <mark style="color:green;">private key</mark> is presented during the connection attempt. If both match, the server grants us access.\
 
 
-## II. Shells:
+## Shells:
 
 ### Shell types:
 
