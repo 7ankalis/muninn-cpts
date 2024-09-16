@@ -4,10 +4,6 @@ description: Transport Network Substrate
 
 # (1521)Oracle TNS
 
-{% hint style="info" %}
-<mark style="color:blue;">This document will be published upon completion of the module.</mark>
-{% endhint %}
-
 ## About
 
 The Oracle Transparent Network Substrate (TNS) is a communication protocol **designed to facilitate interactions between Oracle databases and applications over networks**. Initially introduced as part of the Oracle Net Services suite, it supports various networking protocols, such as IPX/SPX and TCP/IP, making it a preferred choice for managing large, complex databases in industries like healthcare, finance, and retail. Its built-in encryption ensures secure data transmission, making it ideal for enterprise environments with high data security needs.
@@ -210,4 +206,3 @@ $ ./odat.py utlfile -s <TARGET> -d XE -U username -P password --sysdba --putFile
 $ curl -X GET http://10.129.204.235/testing.txt
 ```
 {% endhint %}
-

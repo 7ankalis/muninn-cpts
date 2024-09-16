@@ -31,7 +31,7 @@
     * [MySQL(3306)](enumeration-and-attack-planning/footprinting/host-based-enumeration/mysql-3306.md)
     * [MSSQL(1433)](enumeration-and-attack-planning/footprinting/host-based-enumeration/mssql-1433.md)
     * [(1521)Oracle TNS](enumeration-and-attack-planning/footprinting/host-based-enumeration/1521-oracle-tns.md)
-    * [IPMI](enumeration-and-attack-planning/footprinting/host-based-enumeration/ipmi.md)
+    * [(623 UDP)IPMI](enumeration-and-attack-planning/footprinting/host-based-enumeration/623-udp-ipmi.md)
 * [Skill Assessments](enumeration-and-attack-planning/skill-assessments.md)
 
 ## Web Exploitation
