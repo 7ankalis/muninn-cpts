@@ -4,19 +4,19 @@ description: '-Pn  : Avoid host discovery phase.'
 
 # Port Scanning
 
-## 0. Default scans
+## Default scans
 
 Nmap offers a lot of scanning options to specify the scanning technique. But if none were specified, nmap chooses a default scan type which depends solely on the privileges the user have. Here's a quick explanation:
 
 <img src="../../.gitbook/assets/file.excalidraw (12).svg" alt="Figure1" class="gitbook-drawing">
 
-## 1. Discovering OPEN TCP Ports
+## Discovering OPEN TCP Ports
 
 ```bash
 └──╼ $nmap -Pn -n 10.10.10.10
 ```
 
-## 2. Discovering OPEN UDP Ports (Much slower than TCP)
+## Discovering OPEN UDP Ports (Much slower than TCP)
 
 ```bash
 └──╼ $nmap -Pn -n -sU 10.10.10.10
@@ -29,7 +29,7 @@ Nmap offers a lot of scanning options to specify the scanning technique. But if 
 
 <img src="../../.gitbook/assets/file.excalidraw (8).svg" alt="UDP scans possible outputs." class="gitbook-drawing">
 
-## 3. Service detection:
+## Service detection:
 
 ```bash
 └──╼ $sudo nmap 10.10.10.10 -p- -sV

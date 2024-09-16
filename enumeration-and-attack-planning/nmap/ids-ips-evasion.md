@@ -4,7 +4,7 @@ description: Stalking isn't that easy.
 
 # IDS/IPS Evasion
 
-## 1. Firewall Detection
+## Firewall Detection
 
 ### Testing Firewall rules  (Using ACK scan)
 

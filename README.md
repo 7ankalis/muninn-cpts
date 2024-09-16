@@ -25,6 +25,6 @@ We emphasize the way one should look for information on the internet and the way
 We selected what we think is 'enough' for a beginner to understand the basics and methodologies used all the way to the end of the path, with a great effort to simplify complex concepts using illustrations to visualize them.
 
 {% hint style="warning" %}
-* Our notes should NEVER be taken or granted! If something works in a certain scenario, it doesn't mean it works everywhere.
-* Always consult additional resources. It is never enough.
+* Our notes should NEVER be taken for granted! If something works in a certain scenario, it doesn't mean it works everywhere and anytime.
+* Always consult additional resources. It is never enough; and that's what's fascinating about the field.
 {% endhint %}
