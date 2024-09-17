@@ -32,11 +32,8 @@
     * [(1433)MSSQL](enumeration-and-attack-planning/footprinting/host-based-enumeration/1433-mssql.md)
     * [(1521)Oracle TNS](enumeration-and-attack-planning/footprinting/host-based-enumeration/1521-oracle-tns.md)
     * [(623 UDP)IPMI](enumeration-and-attack-planning/footprinting/host-based-enumeration/623-udp-ipmi.md)
-* [Skill Assessments](enumeration-and-attack-planning/skill-assessments.md)
-
-## Web Exploitation
-
-* [In-Progress...](web-exploitation/in-progress....md)
+  * [Skill Assessments](enumeration-and-attack-planning/footprinting/skill-assessments.md)
+* [Information Gathering - Web Edition](enumeration-and-attack-planning/information-gathering-web-edition.md)
 
 ## Exploitation & Lateral Movement
 
