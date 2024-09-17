@@ -6,7 +6,7 @@
 * SMTP also prevents spam with its authentication mechanisms through supported the extension ESMTP and SMTP-Auth.
 * Not encrypted mainly, but can use SSL/TLS encryption on port 465 by ESTMP which uses TLS after the EHLO command.
 
-<img src="../../../.gitbook/assets/file.excalidraw (1) (1).svg" alt="General illustration on how SMTP is used." class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (1) (1) (1).svg" alt="General illustration on how SMTP is used." class="gitbook-drawing">
 
 Without diving into IMAP/POP3 to get the full image of how the mailing process works, here's how smtp is used in general:
 

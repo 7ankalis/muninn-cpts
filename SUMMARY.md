@@ -33,7 +33,10 @@
     * [(1521)Oracle TNS](enumeration-and-attack-planning/footprinting/host-based-enumeration/1521-oracle-tns.md)
     * [(623 UDP)IPMI](enumeration-and-attack-planning/footprinting/host-based-enumeration/623-udp-ipmi.md)
   * [Skill Assessments](enumeration-and-attack-planning/footprinting/skill-assessments.md)
-* [Information Gathering - Web Edition](enumeration-and-attack-planning/information-gathering-web-edition.md)
+* [Information Gathering - Web Edition](enumeration-and-attack-planning/information-gathering-web-edition/README.md)
+  * [WHOIS](enumeration-and-attack-planning/information-gathering-web-edition/whois.md)
+  * [DNS & Subdomains](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/README.md)
+    * [Digging DNS](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/digging-dns.md)
 
 ## Exploitation & Lateral Movement
 

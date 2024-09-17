@@ -24,7 +24,7 @@ intext:<SNIP> inurl:blob.core.windows.net
 
 ## 2. We can also check a page's source code:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 ## 3. 3rd Party Solutions:
 
@@ -36,7 +36,7 @@ Third-party providers such as [domain.glass](https://domain.glass/) can also tel
 
 {% embed url="https://domain.glass/" %}
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 3.2. GrayHatWafare:
 
