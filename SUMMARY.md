@@ -37,6 +37,8 @@
   * [WHOIS](enumeration-and-attack-planning/information-gathering-web-edition/whois.md)
   * [DNS & Subdomains](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/README.md)
     * [Digging DNS](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/digging-dns.md)
+    * [Subdomains](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/subdomains/README.md)
+      * [Active Enumeration](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/subdomains/active-enumeration.md)
 
 ## Exploitation & Lateral Movement
 
