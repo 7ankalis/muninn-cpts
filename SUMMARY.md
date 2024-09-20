@@ -39,6 +39,7 @@
     * [Digging DNS](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/digging-dns.md)
     * [Subdomains](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/subdomains/README.md)
       * [Active Enumeration](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/subdomains/active-enumeration.md)
+    * [Virtual Hosting](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/virtual-hosting.md)
     * [Crawling](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/crawling.md)
 
 ## Exploitation & Lateral Movement
