@@ -24,7 +24,7 @@ we can add entries to allow/block unwanted websites:
 127.0.0.1       myapp.local
 ```
 
-### Key Concepts
+## Key Concepts
 
 ### DNS Zone
 
@@ -63,3 +63,6 @@ ftp     IN CNAME www.example.com.
 | `PTR`       | Pointer Record            | Used for reverse DNS lookups, mapping an IP address to a hostname.                                                                          | `1.2.0.192.in-addr.arpa.` IN PTR `www.example.com.`                                            |
 
 > The "`IN`" in the examples stands for "Internet." It's a class field in DNS records that specifies the protocol family. In most cases, you'll see "`IN`" used, as it denotes the Internet protocol suite (IP) used for most domain names. Other class values exist (e.g., `CH` for Chaosnet, `HS` for Hesiod) but are rarely used in modern DNS configurations.
+
+
+

@@ -1,5 +1,7 @@
 # Digging DNS
 
+## Tools
+
 | Tool           | Key Features                                                                                            | Use Cases                                                                                                          |
 | -------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | `dig`          | Versatile DNS lookup tool that supports various query types (A, MX, NS, TXT, etc.) and detailed output. | Manual DNS queries, zone transfers (if allowed), troubleshooting DNS issues, and in-depth analysis of DNS records. |
@@ -12,6 +14,8 @@
 
 ## Dig
 
+### Basics
+
 ```shell-session
 $ dig google.com
 ```
@@ -20,6 +24,25 @@ $ dig google.com
 
 ```shell-session
 $ dig +short hackthebox.com
+# For only providing final information without all the text.
 ```
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (31).png" alt=""><figcaption><p>+short option</p></figcaption></figure>
+
+### Zone Transfer
+
+<figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption><p>Zone Transfer Explained.</p></figcaption></figure>
+
+```shell-session
+$ dig axfr @server-requesting-the-information the-server
+```
+
+{% hint style="danger" %}
+The information gleaned from an unauthorized zone transfer can be invaluable to an attacker. It reveals a comprehensive map of the target's DNS infrastructure, including : <mark style="color:red;">Subdomains, IP Addresses, Name Server Records.</mark>
+{% endhint %}
+
+## dnsenum
+
+```shell-session
+$ dnsenum --enum domain -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -r
+```
