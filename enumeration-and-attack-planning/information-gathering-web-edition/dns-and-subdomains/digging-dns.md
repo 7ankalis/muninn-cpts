@@ -34,7 +34,7 @@ $ dig +short hackthebox.com
 <figure><img src="../../../.gitbook/assets/image (32).png" alt=""><figcaption><p>Zone Transfer Explained.</p></figcaption></figure>
 
 ```shell-session
-$ dig axfr @server-requesting-the-information the-server
+$ dig axfr @SERVER-TO-QUERY <DOMAIN>
 ```
 
 {% hint style="danger" %}
@@ -44,5 +44,8 @@ The information gleaned from an unauthorized zone transfer can be invaluable to 
 ## dnsenum
 
 ```shell-session
-$ dnsenum --enum domain -f /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -r
+$ dnsenum --dnsserver <DNS server to query> --enum -p 0 -s 0 -o subdomains.txt -f /opt/useful/SecLists/Discovery/DNS/subdomains-top1million-110000.txt <DOMAIN>
+
+-p Option for the maximum number of google search pages when scraping.
+-s Option for maximum number of subdomains to be scraped from google.
 ```
