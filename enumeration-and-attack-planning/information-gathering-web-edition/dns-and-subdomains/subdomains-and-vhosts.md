@@ -40,20 +40,22 @@ So, we now know that vhosts can also be configured to use different domains not 
 
 ## Fuzzing
 
+{% code overflow="wrap" %}
 ```shell-session
 $ gobuster vhost -u http://<target_IP_address> -w <wordlist_file> --append-domain
-Consider using the -t flag to increase the number of threads for faster scanning.
-The -k flag can ignore SSL/TLS certificate errors.
-You can use the -o flag to save the output to a file for later analysis.
+    Consider using the -t flag to increase the number of threads for faster scanning.
+    The -k flag can ignore SSL/TLS certificate errors.
+    You can use the -o flag to save the output to a file for later analysis.
 
-$ ffuf -w <WORDLIST>:FUZZ -u http://TARGET:PORT/FUZZ -c -v 
-Consider other filter and matching options that ffuf offers (-fw,-fc,-mw...)
+$ ffuf -w <WORDLIST>:FUZZ -u http://FUZZ.TARGET:PORT/ -c -v 
+$ ffuf -w <WORDLIST>:FUZZ https://target:port/ -H 'Host: FUZZ.target' -c -v 
+    Consider other filter and matching options that ffuf offers (-fw,-fc,-mw...)
 
 $ dnsenum --enum <TARGEt> -f <WORDLIST> -r
 -r : Enable Recursive subdomain bruteforcing.
 ```
+{% endcode %}
 
-{% hint style="info" %}
+{% hint style="warning" %}
 In newer versions of Gobuster, the <mark style="color:blue;">--append-domain</mark> flag is required to append the base domain to each word in the wordlist when performing virtual host discovery. This flag ensures that Gobuster correctly constructs the full virtual hostnames, which is essential for the accurate enumeration of potential subdomains. In older versions of Gobuster, this functionality was handled differently, and the <mark style="color:blue;">--append-domain flag</mark> was not necessary. Users of older versions might not find this flag available or needed, as the tool appended the base domain by default or employed a different mechanism for virtual host generation.
 {% endhint %}
-
