@@ -47,7 +47,9 @@
 
 ## Post exploitaion
 
-* [File Transfers](post-exploitaion/file-transfers.md)
+* [File Transfers](post-exploitaion/file-transfers/README.md)
+  * [Linux File Transfer Methods](post-exploitaion/file-transfers/linux-file-transfer-methods.md)
+  * [Transferring Files with Code](post-exploitaion/file-transfers/transferring-files-with-code.md)
 
 ## Reporting
 
