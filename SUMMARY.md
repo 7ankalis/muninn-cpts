@@ -49,6 +49,7 @@
 
 * [File Transfers](post-exploitaion/file-transfers/README.md)
   * [Linux File Transfer Methods](post-exploitaion/file-transfers/linux-file-transfer-methods.md)
+  * [Windows File Transfer Methods](post-exploitaion/file-transfers/windows-file-transfer-methods.md)
   * [Transferring Files with Code](post-exploitaion/file-transfers/transferring-files-with-code.md)
 
 ## Reporting
