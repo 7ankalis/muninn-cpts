@@ -10,18 +10,24 @@ description: >-
 
 ### Why SSH ?
 
-Developed in 1995 by Tatu Ylönen, SSH, or Secure Shell, operating on its <mark style="color:green;">default port 22</mark>, is a cryptographic network protocol used for secure communication over an unsecured network. Initially, SSH was designed to provide secure remote access to Unix-like operating systems, allowing users to log into remote machines securely and execute commands as if they were sitting at the local console.
+SSH, or Secure Shell, is a cryptographic network protocol developed in 1995 by Tatu Ylönen. Operating on its default port, 22, SSH enables secure communication over unsecured networks.
+
+Initially designed for secure remote access to Unix-like operating systems, SSH allows users to log into remote machines and execute commands as if they were working on a local console, providing a secure and efficient way to manage remote systems.
 
 ### SSH for Pentesters:
 
-In general reverse shells aren't stable so an SSH connection would be more reliable . As we often run into cleartext credentials or an SSH private key, we can be use those to connect to the system in a more stable manner through SSH.
+Reverse shells are often unstable, making SSH connections a more reliable alternative for maintaining access. When pentesters encounter cleartext credentials or an SSH private key, they can use these to establish a stable connection to the target system via SSH.
 
-There  are two types of keys used in an SSH connection:&#x20;
+**Types of SSH Keys**
 
-* A Public key: This key is placed on the server we want to access. It's usually stored in a file called <mark style="color:green;">authorized\_keys</mark> in the <mark style="color:green;">.ssh</mark> directory within the user's home directory on the server.&#x20;
-* A Private key: This key remains on our attacking machine and passed in the SSH command args.
+1. **Public Key**:
+   * Stored on the target server.
+   * Typically saved in the `authorized_keys` file located in the `.ssh` directory within the user's home directory.
+2. **Private Key**:
+   * Remains on the attacker’s machine.
+   * Passed as an argument in the SSH command during connection.
 
-The server checks if our **public key** is listed in the <mark style="color:green;">authorized\_keys</mark> file and if the corresponding <mark style="color:green;">private key</mark> is presented during the connection attempt. If both match, the server grants us access.\
+When connecting via SSH, the server checks whether the public key matches one listed in the `authorized_keys` file. If the corresponding private key is presented and verified, the server grants access, ensuring a secure and stable connection.\
 
 
 ## Shells:

@@ -1,30 +1,30 @@
 ---
 description: >-
-  This page is about the reason for creating these notes, what you'll gain from
-  these notes and more!
+  This page explains the reasons behind creating these notes, what you can gain
+  from them, and much more!
 ---
 
 # What is Huginn Notes ?
 
-Drawing inspiration from the epic stories of Norse mythology, Huginn and Muninn are a pair of ravens that traverse the world, Midgard, bringing information to the god Odin. We believe this perfectly encapsulates what pentesting is all about!
+#### Why Huginn Notes?
 
-Huginn and Muninn symbolize the Enumerating, Information Gathering, and Footprinting phase of our pentesting journey, which we consider the most crucial step in conducting a successful pentest.
+Inspired by Huginn and Muninn, the ravens from Norse mythology who travel the world gathering knowledge for Odin, we see pentesting as a similar journey—exploring, gathering information, and uncovering insights.
 
-## Why Huginn Notes?
+As newcomers, we’ve often struggled to find clear, beginner-friendly resources. While there are plenty of excellent notes, cheatsheets, and guides created by experts, they often lack an all-in-one format tailored to someone just starting out. The search for the right information can easily become frustrating and time-consuming. That’s why we created Huginn Notes.
 
-There are great notes, cheatsheets, and checklists done by professionals and experts for literally everything a pentester needs. But we found that they all lack the all-in-one format for a newcomer to this demanding field (similar to us). So, in the search for specific information, one might lose a LOT of time looking for the wrong information in the wrong place.
+#### Our Goal
 
-That's where we come into play!&#x20;
+We are beginners helping beginners. Through Huginn Notes, we aim to simplify the challenges we faced early on and provide a guiding hand for others starting their journey. Here’s how:
 
-#### Our Goal:
+1. **Beginner-Centric Approach:** We’ve curated walkthroughs, write-ups, and notes based on our experience with the CPTS Job Role Path and other resources, designed specifically with beginners in mind.
+2. **Teaching the Process:** Instead of just presenting information, we emphasize how to research effectively and how to get the most out of platforms like HTB. These modules are packed with high-quality material but can be intimidating for someone starting fresh. We aim to fill the gaps and guide you through the learning curve.
+3. **Breaking Down Complexity:** We focus on simplifying challenging concepts through clear explanations and visual aids to make them easier to understand and remember.
 
-After much struggle at the start of our journey, we finally found our equilibrium, and we aim to help you find yours. Here's how: We did not only include walkthroughs, write-ups, and notes we took through the CPTS Job Role Path, we provided much more!
-
-We emphasize the way one should look for information on the internet and the way one should learn as much as possible from the HTB modules, not just go through them to get the badges; because, in our opinion, they aren't that beginner-friendly despite being full of high-quality information. So we'll do our best to fill the gaps and connect the dots a beginner will most certainly stumble upon.
-
-We selected what we think is 'enough' for a beginner to understand the basics and methodologies used all the way to the end of the path, with a great effort to simplify complex concepts using illustrations to visualize them.
+Huginn Notes is for those taking their first steps in pentesting. We’ve been where you are, and we’re here to share what we’ve learned, help you build confidence, and make your pentesting journey as smooth as possible.
 
 {% hint style="warning" %}
-* Our notes should NEVER be taken for granted! If something works in a certain scenario, it doesn't mean it works everywhere and anytime.
-* Always consult additional resources. It is never enough; and that's what's fascinating about the field.
+#### <mark style="color:orange;">A Word of Caution</mark>
+
+* Our notes should **NEVER** be taken for granted! Just because something works in a specific scenario doesn’t mean it will work everywhere or every time.
+* Always consult additional resources and cross-check your findings. In pentesting, there’s always more to learn—and that’s what makes this field so fascinating.
 {% endhint %}
