@@ -4,6 +4,10 @@ description: Who are we? Why?
 
 # From beginners to beginners
 
+<figure><img src=".gitbook/assets/DALL·E 2025-01-16 20.54.20 - A cybersecurity-themed logo for &#x27;How I Met Your Shell&#x27; with a binary code background and a red-and-black color scheme. The design features a hacker-st.webp" alt=""><figcaption></figcaption></figure>
+
+
+
 ## Why How I Met Your Shell?
 
 As newcomers, we’ve often struggled to find clear, beginner-friendly resources. While there are plenty of excellent notes, cheatsheets, and guides created by experts, they often lack an all-in-one format tailored to someone just starting out. The search for the right information can easily become frustrating and time-consuming. That’s why we created HIMYSH. We believe that we're good at taking notes and getting the most out of whatever thing we do, so here we are!

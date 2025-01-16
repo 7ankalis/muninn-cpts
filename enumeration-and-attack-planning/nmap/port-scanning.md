@@ -24,7 +24,7 @@ Nmap offers a lot of scanning options to specify the scanning technique. But if 
 
 {% hint style="danger" %}
 * We do not receive any acknowledgment. Consequently, <mark style="color:red;">**the timeout is much longer**</mark>, making the whole `UDP scan` (`-sU`) much slower than the `TCP scan` (`-sS`).
-* Also We often do not get a response back because `Nmap` sends empty datagrams to the scanned UDP ports, and we do not receive any response. So we cannot determine if the UDP packet has arrived at all or not. <mark style="color:red;">**If the UDP port is**</mark><mark style="color:red;">** **</mark><mark style="color:red;">**`open`**</mark><mark style="color:red;">**, we only get a response if the application is configured to do so.**</mark>
+* Also We often do not get a response back because `Nmap` sends empty datagrams to the scanned UDP ports, and we do not receive any response. So we cannot determine if the UDP packet has arrived at all or not. <mark style="color:red;">**If the UDP port is**</mark><mark style="color:red;">**&#x20;**</mark><mark style="color:red;">**`open`**</mark><mark style="color:red;">**, we only get a response if the application is configured to do so.**</mark>
 {% endhint %}
 
 <img src="../../.gitbook/assets/file.excalidraw (8).svg" alt="UDP scans possible outputs." class="gitbook-drawing">
