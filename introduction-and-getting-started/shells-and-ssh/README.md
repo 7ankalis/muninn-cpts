@@ -1,7 +1,7 @@
 ---
 description: >-
-  This is a non-technical page about terms and tools we'll encounter all along
-  the way.
+  This page contains non technical information about the concept of shells and
+  SSH.
 ---
 
 # Shells & SSH
@@ -38,10 +38,10 @@ When connecting via SSH, the server checks whether the public key matches one li
 
 ### Reverse shell :
 
-<img src="../../.gitbook/assets/file.excalidraw (9).svg" alt="Reverse Shell illustration" class="gitbook-drawing">
+<img src="../../.gitbook/assets/file.excalidraw (9).svg" alt="Reverse Shell illustration with a php file." class="gitbook-drawing">
 
 {% hint style="info" %}
-A Reverse Shell is handy when we want to get a quick, reliable connection to our compromised host. However, a Reverse Shell can be <mark style="color:blue;">very fragile</mark>. Once the reverse shell command is stopped, or if we lose our connection for any reason, we would have to use the initial exploit to execute the reverse shell command again to regain our access.
+A Reverse Shell is handy when we want to get a quick, reliable connection to our compromised host. However, a Reverse Shell can be <mark style="color:blue;">very fragile</mark>. Once the reverse shell command is stopped, or if we lose our connection for any reason, we would have to use the initial exploit to execute the reverse shell command again to regain our access and this is where SSH come in handy, since it stable most of the times, responsive and interactive.
 {% endhint %}
 
 ### Bind Shell :
@@ -54,7 +54,7 @@ As we can see, we are directly dropped into a bash session and can interact with
 
 ### Web Shell:
 
-A Web Shell is typically a web script, i.e., `PHP` or `ASPX`, that accepts our command <mark style="color:blue;">through HTTP request parameters</mark> such as `GET` or `POST` request parameters, executes our command, and prints its output back on the web page.
+A Web Shell is typically a web script, i.e., `PHP` or `ASPX`, that accepts our command <mark style="color:blue;">through HTTP request parameters</mark> such as `GET` or `POST` request parameters, executes our command, and prints its output back on the web page. So our commands simply get executed on the server and the response is sent back to be rendered on the page. So if we send a Reverse Shell command to it and successfully gets executed, expect a non responsive web page and a hit back on the listener we set up on our machine beforehand. We can look at it as if the process that handles our request is on our hook managing the connection IT initialized.&#x20;
 
 {% hint style="info" %}
 Each command we execute requests another URL to execute the commands.

