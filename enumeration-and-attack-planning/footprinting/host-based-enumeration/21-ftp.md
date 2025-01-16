@@ -2,24 +2,24 @@
 description: Uses TCP, maybe that's why it informs us when the transfer wasn't successful?
 ---
 
-# FTP(21)
+# (21)FTP
 
-## About:
+## About
 
 <img src="../../../.gitbook/assets/file.excalidraw (3).svg" alt="Basic FTP connection graph." class="gitbook-drawing">
 
-### Active VS Passive:
+### Active VS Passive FTP
 
-<img src="../../../.gitbook/assets/file.excalidraw (5).svg" alt="" class="gitbook-drawing">
+<img src="../../../.gitbook/assets/file.excalidraw (5).svg" alt="Active vs Passive FTP" class="gitbook-drawing">
 
 {% hint style="info" %}
 TFTP on the other hand, is a more basic implementation of FTP:
 
 * It uses UDP.
-* Needs no user authentication.
+* <mark style="color:red;">Needs no user authentication.</mark>
 * No directory listing functionality
 
-These characteristics are enough to assume that this protocol should be used only on strongly secured networks.
+<mark style="color:red;">These characteristics are enough to assume that this protocol should be used only on strongly secured networks.</mark>
 {% endhint %}
 
 ## Config:
@@ -27,7 +27,7 @@ These characteristics are enough to assume that this protocol should be used onl
 For Linux, it is common to use the vsFTPd server to implement the FTP protocol.
 
 ```bash
-$ sudo apt install vsftpd
+$sudo apt install vsftpd
 ```
 
 * _**/etc/vstpd.conf**_
@@ -41,9 +41,8 @@ $ sudo apt install vsftpd
 * ls -R (if it's enabled)&#x20;
 
 ```bash
-$ wget -m --no-passive ftp://username:password@targetIP
-
-## Outputs a directory with the target IP name containing the downloaded content.
+# Outputs a directory with the target IP name containing the downloaded content.
+$wget -m --no-passive ftp://username:password@targetIP
 ```
 
 ## Enumeration
@@ -51,7 +50,7 @@ $ wget -m --no-passive ftp://username:password@targetIP
 ### Nmap
 
 ```bash
-$ sudo nmap  -p21 -sC --script=ftp* 10.10.10.10
+$sudo nmap  -p21 -sC --script=ftp* 10.10.10.10
 ```
 
 ### Interaction and banner grabbing:
@@ -61,12 +60,18 @@ $ sudo nmap  -p21 -sC --script=ftp* 10.10.10.10
 Upon connecting to the server, we'll get a response depending on how it was configured, we'll try to grab and check that banner to get more information about the server.
 
 ```bash
-$nc 10.10.10.10 21
-$telnet 10.10.10.10 21
+$nc <target-ip> 21
+$telnet <target-ip> 21
+```
+
+#### Download all the available content:
+
+```bash
+$wget -m --no-passive ftp://username:password@targetIP
 ```
 
 If the server runs with TLS/SSL encryption:
 
 ```bash
-$ openssl s_client -connect 10.10.10.10:21 -starttls ftp
+$openssl s_client -connect <target-ip>:21 -starttls ftp
 ```
