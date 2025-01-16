@@ -1,6 +1,6 @@
 # Table of contents
 
-* [What is Huginn Notes ?](README.md)
+* [From beginners to beginners](README.md)
 
 ## Introduction & Getting Started
 
