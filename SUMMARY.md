@@ -23,7 +23,7 @@
   * [Host-Based Enumeration](enumeration-and-attack-planning/footprinting/host-based-enumeration/README.md)
     * [(21)FTP](enumeration-and-attack-planning/footprinting/host-based-enumeration/21-ftp.md)
     * [(139,445)SMB](enumeration-and-attack-planning/footprinting/host-based-enumeration/139-445-smb.md)
-    * [(111,2049)NFS](enumeration-and-attack-planning/footprinting/host-based-enumeration/111-2049-nfs.md)
+    * [(111,2049 for NFSv4.1)NFS](enumeration-and-attack-planning/footprinting/host-based-enumeration/111-2049-for-nfsv4.1-nfs.md)
     * [SMTP(25/465(enc)/587(newer))](enumeration-and-attack-planning/footprinting/host-based-enumeration/smtp-25-465-enc-587-newer.md)
     * [DNS](enumeration-and-attack-planning/footprinting/host-based-enumeration/dns.md)
     * [(143,993)IMAP/POP3(110,995)](enumeration-and-attack-planning/footprinting/host-based-enumeration/143-993-imap-pop3-110-995.md)
