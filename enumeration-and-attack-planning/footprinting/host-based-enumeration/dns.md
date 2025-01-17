@@ -1,6 +1,11 @@
+---
+description: Domain Name System
+---
+
 # DNS
 
-{% hint style="info" %}
-<mark style="color:blue;">This document will be published upon completion of the module.</mark>
-{% endhint %}
+The DNS concepts, enumeration is more in depth in the Web section down below:
 
+{% content-ref url="../../information-gathering-web-edition/dns-and-subdomains/" %}
+[dns-and-subdomains](../../information-gathering-web-edition/dns-and-subdomains/)
+{% endcontent-ref %}
