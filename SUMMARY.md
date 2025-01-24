@@ -43,6 +43,7 @@
 
 ## Exploitation & Lateral Movement
 
+* [Shells & Payloads](exploitation-and-lateral-movement/shells-and-payloads.md)
 * [In-Progress...](exploitation-and-lateral-movement/in-progress....md)
 
 ## Post exploitaion
