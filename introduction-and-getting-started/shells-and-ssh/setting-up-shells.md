@@ -91,13 +91,15 @@ they are typed, without any line buffering or special interpretation (such as Ct
 -echo: By turning off echoing, characters typed by the user won't be displayed on the screen.
 ```
 
-{% hint style="info" %}
+{% hint style="success" %}
+<mark style="color:green;">Now we can use the full terminal features.</mark>
+{% endhint %}
+
+{% hint style="warning" %}
 Intuitively, since we're executing commands on a target machine, all of our work highly and directly  depends on the permissions of the files/binaries we're aiming to execute. So?
 
 sudo -l your way in in easy boxes :smile:
 {% endhint %}
-
-
 
 #### Bash
 
@@ -147,22 +149,6 @@ victim@target$vim
 :set shell=/bin/sh
 :shell
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-{% hint style="success" %}
-<mark style="color:green;">Now we can use the full terminal features.</mark>
-{% endhint %}
 
 ## Bind shells:
 
