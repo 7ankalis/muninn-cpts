@@ -43,7 +43,8 @@
 
 ## Exploitation & Lateral Movement
 
-* [Web Shells & Payloads](exploitation-and-lateral-movement/web-shells-and-payloads.md)
+* [Web Shells & Payloads](exploitation-and-lateral-movement/web-shells-and-payloads/README.md)
+  * [Skill Assessment](exploitation-and-lateral-movement/web-shells-and-payloads/skill-assessment.md)
 * [In-Progress...](exploitation-and-lateral-movement/in-progress....md)
 
 ## Post exploitaion

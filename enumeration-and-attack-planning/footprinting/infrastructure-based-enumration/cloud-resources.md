@@ -26,7 +26,7 @@ intext:<SNIP> inurl:blob.core.windows.net
 
 ## Page's source code:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 Even it's a low hanging fruit, it can expose some endpoints or some cloud resources being referred from the page we're consulting. Even we don't find anything related to  the cloud, we can find API endpoints, other pages or hidden directories.
 
@@ -40,7 +40,7 @@ Third-party providers such as [domain.glass](https://domain.glass/) can also tel
 
 {% embed url="https://domain.glass/" %}
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption><p>Example output from domain.glass</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption><p>Example output from domain.glass</p></figcaption></figure>
 
 ### GrayHatWafare:
 
