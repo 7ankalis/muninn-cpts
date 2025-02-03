@@ -45,7 +45,8 @@
 
 * [Web Shells & Payloads](exploitation-and-lateral-movement/web-shells-and-payloads/README.md)
   * [Skill Assessment](exploitation-and-lateral-movement/web-shells-and-payloads/skill-assessment.md)
-* [Metasploit](exploitation-and-lateral-movement/metasploit.md)
+* [Metasploit](exploitation-and-lateral-movement/metasploit/README.md)
+  * [Page 1](exploitation-and-lateral-movement/metasploit/page-1.md)
 
 ## Post exploitaion
 
