@@ -48,6 +48,7 @@
 * [Metasploit](exploitation-and-lateral-movement/metasploit/README.md)
   * [Modules, targets](exploitation-and-lateral-movement/metasploit/modules-targets.md)
   * [Payloads](exploitation-and-lateral-movement/metasploit/payloads.md)
+  * [Encoders](exploitation-and-lateral-movement/metasploit/encoders.md)
   * [Meterpreter](exploitation-and-lateral-movement/metasploit/meterpreter.md)
 
 ## Post exploitaion
