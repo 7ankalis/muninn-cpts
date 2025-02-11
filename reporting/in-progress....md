@@ -4,111 +4,13 @@
 <mark style="color:blue;">This document will be published upon completion of the module</mark>
 {% endhint %}
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <errno.h>
+Most host-based anti-virus software nowadays relies mainly on `Signature-based Detection` to identify aspects of malicious code present in a software sample. These signatures are placed inside the Antivirus Engine, where they are subsequently used to scan storage space and running processes for any matches. When a piece of unknown software lands on a partition and is matched by the Antivirus software, most Anti-viruses quarantine the malicious program and kill the running process.
 
-#define MAX_NAME 21
-typedef struct student{
-	long id;
-	float average;
-	char name[MAX_NAME];
-	student *next=NULL;
-}student;
+How do we circumvent all this heat? We play along with it. The examples shown in the `Encoders` section show that simply encoding payloads using different encoding schemes with multiple iterations is not enough for all AV products. Moreover, merely establishing a channel of communication between the attacker and the victim can raise some alarms with the current capabilities of IDS/IPS products out there.
 
-student *head=NULL;
+However, with the MSF6 release, msfconsole can tunnel AES-encrypted communication from any Meterpreter shell back to the attacker host, successfully encrypting the traffic as the payload is sent to the victim host. This mostly takes care of the network-based IDS/IPS. In some rare cases, we might be met with very strict traffic rulesets that flag our connection based on the sender's IP address. The only way to circumvent this is to find the services being let through. An excellent example of this would be the Equifax hack of 2017, where malicious hackers have abused the Apache Struts vulnerability to access a network of critical data servers. DNS exfiltration techniques were used to slowly siphon data out of the network and into the hackers' domain without being noticed for months. To learn more about this attack, visit the links below:
 
-void init(void){
-	printf("1) Show students' list.\n");
-	printf("2) Add student.\n");
-	printf("3) Remove student.\n");
-	printf("4) Sorst list..\n");
-	printf("5) Search student.\n");
-	printf("6) Save to a single file.\n");
-	printf("7) Save in categories\n");
-}
+{% embed url="https://www.zdnet.com/article/us-government-releases-post-mortem-report-on-equifax-hack/" %}
 
-void mem_fail(void){
-	fprintf(stderr,"Can't allocate memory...\n");
-	fprintf(stdout,"Error code = %d\n", errno);
-}
-
-void add_head(long id){
-	float avg;
-	char name[MAX_NAME];
-	printf("\nAVG:");
-	scanf("%f", &avg);
-	printf("\nNAME:");
-	fgets(name, MAX_NAME, stdin);
-
-	if (!head){
-		head->average=avg;
-		head->name=name;
-		head->id=id;
-		return;
-	}
-	
-	student *node = (student*)malloc(sizeof(student));
-	if (!node){
-		mem_fail();
-		exit(EXIT_FAILURE);
-	}
-
-	node->name=name;
-	node->average=avg;
-	node->id=id;
-	node->next=head;
-	head=node;
-}
-
-void add_tail(long id){
-	float avg;
-	char name[MAX_NAME];
-	printf("NAME: ");
-	fgets(name, MAX_NAME, stdin);
-	printf("AVERAGE");
-	scanf("%f", &avg);
-	
-	student *node = (student*)malloc(sizeof(student));
-	if(!node){
-		mem_fail();
-		exit(EXIT_FAILURE);
-	}
-	node->average = avg;
-	node->name = name;
-	node->id = id;
-	
-	student *current;
-	if (!current){
-		mem_fail();
-		exit(EXIT_FAILURE);
-	}
-	current = head;
-	while(current->next != NULL){
-		current = current->next;
-	}
-	current->next = node;
-}
-
-int find_student(long cin){
-	student *current;
-	if (!current){
-		mem_fail();
-		exit(EXIT_FAILURE);
-	}
-	current=head;
-
-	while (current->next != NULL){
-		if (current->id == id){
-			return 1;
-		}
-	}
-}
-
-
-int main(void){
-
-}
-```
+{% embed url="https://www.darkreading.com/cyber-risk/tips-to-protect-the-dns-from-data-exfiltration" %}
 
