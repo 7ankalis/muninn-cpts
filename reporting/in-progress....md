@@ -14,3 +14,9 @@ However, with the MSF6 release, msfconsole can tunnel AES-encrypted communicatio
 
 {% embed url="https://www.darkreading.com/cyber-risk/tips-to-protect-the-dns-from-data-exfiltration" %}
 
+* Detect polymorphic shellcode: shikata\_ga\_nai
+* Detect slow rate attacks
+* Protocol Analysis
+
+
+
