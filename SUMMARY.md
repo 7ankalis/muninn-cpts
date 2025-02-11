@@ -47,13 +47,14 @@
   * [Skill Assessment](exploitation-and-lateral-movement/web-shells-and-payloads/skill-assessment.md)
 * [Metasploit](exploitation-and-lateral-movement/metasploit/README.md)
   * [Modules, targets](exploitation-and-lateral-movement/metasploit/modules-targets.md)
-  * [Payloads](exploitation-and-lateral-movement/metasploit/payloads.md)
-  * [Encoders](exploitation-and-lateral-movement/metasploit/encoders.md)
+  * [External Modules](exploitation-and-lateral-movement/metasploit/external-modules.md)
+  * [Plugins & Mixins](exploitation-and-lateral-movement/metasploit/plugins-and-mixins.md)
   * [Databases](exploitation-and-lateral-movement/metasploit/databases.md)
   * [Sessions & Jobs](exploitation-and-lateral-movement/metasploit/sessions-and-jobs.md)
-  * [Meterpreter](exploitation-and-lateral-movement/metasploit/meterpreter.md)
-  * [External Modules](exploitation-and-lateral-movement/metasploit/external-modules.md)
+  * [Payloads](exploitation-and-lateral-movement/metasploit/payloads.md)
+  * [Encoders](exploitation-and-lateral-movement/metasploit/encoders.md)
   * [msfvenom](exploitation-and-lateral-movement/metasploit/msfvenom.md)
+  * [Meterpreter](exploitation-and-lateral-movement/metasploit/meterpreter.md)
 
 ## Post exploitaion
 
