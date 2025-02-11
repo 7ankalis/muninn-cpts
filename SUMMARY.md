@@ -50,6 +50,7 @@
   * [Payloads](exploitation-and-lateral-movement/metasploit/payloads.md)
   * [Encoders](exploitation-and-lateral-movement/metasploit/encoders.md)
   * [Databases](exploitation-and-lateral-movement/metasploit/databases.md)
+  * [Sessions & Jobs](exploitation-and-lateral-movement/metasploit/sessions-and-jobs.md)
   * [Meterpreter](exploitation-and-lateral-movement/metasploit/meterpreter.md)
 
 ## Post exploitaion
