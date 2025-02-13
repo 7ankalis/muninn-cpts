@@ -40,6 +40,8 @@
     * [Subdomains & VHosts](enumeration-and-attack-planning/information-gathering-web-edition/dns-and-subdomains/subdomains-and-vhosts.md)
   * [More Fingerprinting](enumeration-and-attack-planning/information-gathering-web-edition/more-fingerprinting.md)
   * [Crawling](enumeration-and-attack-planning/information-gathering-web-edition/crawling.md)
+* [Password Attacks](enumeration-and-attack-planning/password-attacks/README.md)
+  * [John The Ripper](enumeration-and-attack-planning/password-attacks/john-the-ripper.md)
 
 ## Exploitation & Lateral Movement
 
