@@ -274,11 +274,8 @@ $ evil-winrm -i <target-ip>  -u  <user> -H <NT-hash>
 ```
 {% endhint %}
 
-## Creds Hunting
+## Creds Hunting In Windows
 
-
-
-
-
-
-
+{% hint style="info" %}
+Coming :smile:
+{% endhint %}
