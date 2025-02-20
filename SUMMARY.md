@@ -44,6 +44,7 @@
   * [John The Ripper](enumeration-and-attack-planning/password-attacks/john-the-ripper.md)
   * [Misc](enumeration-and-attack-planning/password-attacks/misc.md)
   * [Local Windows Password Attacks](enumeration-and-attack-planning/password-attacks/local-windows-password-attacks.md)
+  * [Page](enumeration-and-attack-planning/password-attacks/page.md)
 
 ## Exploitation & Lateral Movement
 
