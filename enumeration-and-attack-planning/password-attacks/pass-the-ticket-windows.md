@@ -1,5 +1,24 @@
 # Pass the Ticket Windows
 
+## About Kerberos
+
+Simply put, Kerberos is an authentication system that works with the concept of Tickets. Instead of asking the domain-joined user each time for a password to access specific services, It presents a ticket for each server they asked for, without the need to provide their password every time. This works with two types of tickets:
+
+* TGT: Ticket Granting Ticket which is the first ticket we obtain on a Kerberos system. It permits the client to obtain additional Kerberos tickets or TGS.
+* TGS: Ticket Granting Service, which is requested by users who want to access specific service. It allows services to verify the user's identity. The process is as follows:
+
+1. The user requests a TGT.
+2. They must authenticate to the DC by combining a timestamp encryption and his password hash.
+3. The DC then decrypts the timestamp and verifies the identity.
+4. Upon success the DC sends back a TGT to the user for future requests.
+5. User no longer have to verify their identity with their password.
+6. If the user wants to access MSSQL database, they request a TGS to the Key Distribution Center (KDC) while presenting their TGT.
+7. The KDC will give the TGs to the MSSQL database server for authentication.
+
+***
+
+
+
 ## Harvesting Kerberos Tickets
 
 ### Method 1: Mimikatz **sekurlsa::tickets** module
