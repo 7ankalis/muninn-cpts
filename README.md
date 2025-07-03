@@ -4,9 +4,9 @@ description: Who are we? Why?
 
 # From beginners to beginners
 
-<figure><img src=".gitbook/assets/DALL·E 2025-01-16 20.54.20 - A cybersecurity-themed logo for &#x27;How I Met Your Shell&#x27; with a binary code background and a red-and-black color scheme. The design features a hacker-st.webp" alt=""><figcaption></figcaption></figure>
 
 
+<figure><img src=".gitbook/assets/sora-per.png" alt=""><figcaption></figcaption></figure>
 
 ## Why How I Met Your Shell?
 
